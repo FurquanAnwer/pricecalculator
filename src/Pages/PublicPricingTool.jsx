@@ -36,66 +36,100 @@ function PublicPricingTool() {
       const subscriptionPricing = tool.pricingMechanisms.find(
         (pricing) => pricing.type === "Subscription"
       );
-      const price = subscriptionPricing ? parseFloat(subscriptionPricing.details.split(",")[0].replace(/[^0-9]/g, "")) : 0;
+      const price = subscriptionPricing
+        ? parseFloat(
+            subscriptionPricing.details.split(",")[0].replace(/[^0-9]/g, "")
+          )
+        : 0;
       return total + price;
     }, 0);
   };
 
   return (
-    <div className="h-screen bg-white grid grid-cols-12 p-5 gap-4">
-      {/* Left Panel */}
-      <div className="col-span-6 bg-gray-100 rounded-lg p-4 overflow-y-auto">
-        <h2 className="font-bold text-xl mb-4">Available Tools</h2>
-        {tools.length > 0 ? (
-          tools.map((tool, index) => (
-            <div
-              key={index}
-              className={`mb-4 border p-3 rounded shadow cursor-pointer ${
-                selectedTools.some((t) => t.name === tool.name)
-                  ? "bg-blue-200"
-                  : ""
-              }`}
-              onClick={() => handleSelectTool(tool)}
-            >
-              <p className="font-bold">{tool.name}</p>
-              <p>Company: {tool.company}</p>
-              <p>Version: {tool.version}</p>
-              <p>Type: {tool.type}</p>
-              <p>Variant: {tool.variant}</p>
-            </div>
-          ))
-        ) : (
-          <p>No tools available.</p>
-        )}
-      </div>
-
-      {/* Right Panel */}
-      <div className="col-span-6 bg-gray-200 rounded-lg p-4">
-        <h2 className="font-bold text-xl mb-4">Selected Tools</h2>
-        {selectedTools.length > 0 ? (
-          <div>
-            {selectedTools.map((tool, index) => (
-              <div key={index} className="mb-4 border p-3 rounded shadow">
-                <p className="font-bold">Name: {tool.name}</p>
-                <p>Company: {tool.company}</p>
-                <p>Pricing:</p>
-                <ul className="list-disc pl-5">
-                  {tool.pricingMechanisms.map((pricing, idx) => (
-                    <li key={idx}>
-                      <strong>{pricing.type}:</strong> {pricing.details}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            <div className="mt-4 p-4 bg-white rounded shadow">
-              <h3 className="font-bold text-lg">Total Estimated Cost</h3>
-              <p className="text-xl font-semibold">${calculateTotalCost()}</p>
-            </div>
+    <div className="h-screen bg-gray-50 p-4 md:p-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 h-full">
+        {/* Left Panel */}
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h2 className="font-semibold text-2xl text-gray-800 mb-6">
+            Available Tools
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 overflow-y-scroll max-h-[80vh] m-1">
+            {tools.length > 0 ? (
+              tools.map((tool, index) => (
+                <div
+                  key={index}
+                  className={`border p-6 rounded-lg shadow-md transition-all m-2 ${
+                    selectedTools.some((t) => t.name === tool.name)
+                      ? "bg-blue-100 border-blue-500"
+                      : "hover:shadow-lg"
+                  } cursor-pointer`}
+                  onClick={() => handleSelectTool(tool)}
+                >
+                  <p className="font-bold text-lg text-gray-900">
+                    {tool.name}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    Company: <span className="font-medium">{tool.company}</span>
+                  </p>
+                  <p className="text-sm text-gray-600">Version: {tool.version}</p>
+                  <p className="text-sm text-gray-600">Type: {tool.type}</p>
+                  <p className="text-sm text-gray-600">Variant: {tool.variant}</p>
+                </div>
+              ))
+            ) : (
+              <p className="text-gray-500">No tools available.</p>
+            )}
           </div>
-        ) : (
-          <p>No tools selected yet.</p>
-        )}
+        </div>
+
+        {/* Right Panel */}
+        <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+          <div>
+            <h2 className="font-semibold text-2xl text-gray-800 mb-4">
+              Selected Tools
+            </h2>
+            {selectedTools.length > 0 ? (
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="border p-2 text-left">Name</th>
+                      <th className="border p-2 text-left">Company</th>
+                      <th className="border p-2 text-left">Pricing</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {selectedTools.map((tool, index) => (
+                      <tr key={index} className="bg-white hover:bg-gray-50">
+                        <td className="border p-2">{tool.name}</td>
+                        <td className="border p-2">{tool.company}</td>
+                        <td className="border p-2">
+                          <ul className="list-disc pl-5">
+                            {tool.pricingMechanisms.map((pricing, idx) => (
+                              <li key={idx}>
+                                <strong>{pricing.type}:</strong> {pricing.details}
+                              </li>
+                            ))}
+                          </ul>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <p className="text-gray-500">No tools selected yet.</p>
+            )}
+          </div>
+          <div className="mt-6 p-4 bg-gray-50 border-t rounded-lg">
+            <h3 className="font-bold text-lg text-gray-700">
+              Total Estimated Cost
+            </h3>
+            <p className="text-2xl font-semibold text-blue-600 mt-2">
+              ${calculateTotalCost()}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

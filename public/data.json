@@ -1,141 +1,204 @@
 [
-    {
-      "company": "TechCorp",
-      "tools": [
-        {
-          "name": "ToolX",
-          "version": "1.2.0",
-          "type": "Analytics",
-          "variant": "Cloud",
-          "pricingMechanisms": [
-            {
-              "type": "Subscription",
-              "details": "Monthly: $100, Yearly: $1000"
-            },
-            {
-              "type": "Pay-as-you-go",
-              "details": "$10 per 1000 requests"
-            }
-          ]
-        },
-        {
-          "name": "DataPro",
-          "version": "3.4.1",
-          "type": "Data Processing",
-          "variant": "On-Premise",
-          "pricingMechanisms": [
-            {
-              "type": "One-Time",
-              "details": "$5000"
-            },
-            {
-              "type": "License",
-              "details": "Annual: $2000"
-            }
-          ]
-        },
-        {
-          "name": "SecureVault",
-          "version": "2.0.5",
-          "type": "Security",
-          "variant": "Hybrid",
-          "pricingMechanisms": [
-            {
-              "type": "Subscription",
-              "details": "Monthly: $300, Yearly: $3000"
-            },
-            {
-              "type": "Pay-per-usage",
-              "details": "$0.05 per MB secured"
-            }
-          ]
-        },
-        {
-          "name": "InsightAI",
-          "version": "1.0.0",
-          "type": "AI Insights",
-          "variant": "Cloud",
-          "pricingMechanisms": [
-            {
-              "type": "Subscription",
-              "details": "Monthly: $400, Yearly: $4500"
-            },
-            {
-              "type": "Freemium",
-              "details": "Free for up to 1000 insights per month"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "company": "Innovatech",
-      "tools": [
-        {
-          "name": "VisionPlus",
-          "version": "2.5.0",
-          "type": "Computer Vision",
-          "variant": "Cloud",
-          "pricingMechanisms": [
-            {
-              "type": "Subscription",
-              "details": "Monthly: $200, Yearly: $2200"
-            },
-            {
-              "type": "Pay-per-use",
-              "details": "$0.02 per image processed"
-            }
-          ]
-        },
-        {
-          "name": "StreamFlow",
-          "version": "4.1.0",
-          "type": "Streaming Data",
-          "variant": "On-Premise",
-          "pricingMechanisms": [
-            {
-              "type": "License",
-              "details": "Annual: $3000"
-            },
-            {
-              "type": "Pay-as-you-go",
-              "details": "$0.01 per 1000 events"
-            }
-          ]
-        },
-        {
-          "name": "CodeGuard",
-          "version": "1.3.2",
-          "type": "Code Security",
-          "variant": "Hybrid",
-          "pricingMechanisms": [
-            {
-              "type": "Subscription",
-              "details": "Monthly: $500, Yearly: $5500"
-            },
-            {
-              "type": "One-Time",
-              "details": "$8000"
-            }
-          ]
-        },
-        {
-          "name": "DataShield",
-          "version": "3.0.0",
-          "type": "Data Security",
-          "variant": "Cloud",
-          "pricingMechanisms": [
-            {
-              "type": "Subscription",
-              "details": "Monthly: $350, Yearly: $4000"
-            },
-            {
-              "type": "Pay-as-you-go",
-              "details": "$0.10 per GB secured"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-  
+  {
+    "company": "TechCorp",
+    "tools": [
+      {
+        "name": "ToolX",
+        "version": "1.2.0",
+        "type": "Analytics",
+        "variant": "Cloud",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $100, Yearly: $1000"
+          },
+          {
+            "type": "Pay-as-you-go",
+            "details": "$10 per 1000 requests"
+          }
+        ]
+      },
+      {
+        "name": "DataPro",
+        "version": "3.4.1",
+        "type": "Data Processing",
+        "variant": "On-Premise",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $200, Yearly: $2400"
+          },
+          {
+            "type": "One-Time",
+            "details": "$5000"
+          }
+        ]
+      },
+      {
+        "name": "SecureVault",
+        "version": "2.0.5",
+        "type": "Security",
+        "variant": "Hybrid",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $300, Yearly: $3000"
+          },
+          {
+            "type": "Pay-per-usage",
+            "details": "$0.05 per MB secured"
+          }
+        ]
+      },
+      {
+        "name": "InsightAI",
+        "version": "1.0.0",
+        "type": "AI Insights",
+        "variant": "Cloud",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $400, Yearly: $4500"
+          },
+          {
+            "type": "Freemium",
+            "details": "Free for up to 1000 insights per month"
+          }
+        ]
+      },
+      {
+        "name": "SmartOps",
+        "version": "2.3.0",
+        "type": "Operational Intelligence",
+        "variant": "Cloud",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $250, Yearly: $2800"
+          },
+          {
+            "type": "Usage-based",
+            "details": "$0.03 per operation"
+          }
+        ]
+      },
+      {
+        "name": "ProcessFlow",
+        "version": "4.0.0",
+        "type": "Workflow Automation",
+        "variant": "Hybrid",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $400, Yearly: $4800"
+          },
+          {
+            "type": "License",
+            "details": "Annual: $4500"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "company": "Innovatech",
+    "tools": [
+      {
+        "name": "VisionPlus",
+        "version": "2.5.0",
+        "type": "Computer Vision",
+        "variant": "Cloud",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $200, Yearly: $2200"
+          },
+          {
+            "type": "Pay-per-use",
+            "details": "$0.02 per image processed"
+          }
+        ]
+      },
+      {
+        "name": "StreamFlow",
+        "version": "4.1.0",
+        "type": "Streaming Data",
+        "variant": "On-Premise",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $250, Yearly: $3000"
+          },
+          {
+            "type": "License",
+            "details": "Annual: $3000"
+          }
+        ]
+      },
+      {
+        "name": "CodeGuard",
+        "version": "1.3.2",
+        "type": "Code Security",
+        "variant": "Hybrid",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $500, Yearly: $5500"
+          },
+          {
+            "type": "One-Time",
+            "details": "$8000"
+          }
+        ]
+      },
+      {
+        "name": "DataShield",
+        "version": "3.0.0",
+        "type": "Data Security",
+        "variant": "Cloud",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $350, Yearly: $4000"
+          },
+          {
+            "type": "Pay-as-you-go",
+            "details": "$0.10 per GB secured"
+          }
+        ]
+      },
+      {
+        "name": "APIInsight",
+        "version": "2.1.0",
+        "type": "API Management",
+        "variant": "Cloud",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $150, Yearly: $1700"
+          },
+          {
+            "type": "Pay-as-you-go",
+            "details": "$0.05 per API call"
+          }
+        ]
+      },
+      {
+        "name": "DevSecure",
+        "version": "5.2.0",
+        "type": "Developer Security",
+        "variant": "On-Premise",
+        "pricingMechanisms": [
+          {
+            "type": "Subscription",
+            "details": "Monthly: $500, Yearly: $6000"
+          },
+          {
+            "type": "One-Time",
+            "details": "$10000"
+          }
+        ]
+      }
+    ]
+  }
+]
