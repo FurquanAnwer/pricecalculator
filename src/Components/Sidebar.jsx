@@ -24,7 +24,7 @@ const Sidebar = ({ setIsAuthenticated, isSidebarOpen, setIsSidebarOpen }) => {
         } md:left-0`}
       >
         <div>
-          <h3 className="text-xl font-extrabold text-white mb-6">TechCorp</h3>
+          <h3 className="text-xl font-extrabold text-white mb-6 mt-6">TechCorp</h3>
           <nav className="space-y-6">
             <NavLink
               to="/dashboard"
